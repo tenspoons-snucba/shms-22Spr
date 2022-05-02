@@ -1,0 +1,22 @@
+@startuml
+title notebook overview
+start
+:오늘의 영화랭킹 맨 앞 5페이지의 주소를 만든다\nlist_rank_page_url 리스트에 저장한다;
+:오늘의 영화랭킹 맨 앞 5페이지를 확인해서\n 랭킹에 오른 영화들의 id를 가져온다\ndf_id_title 데이터프레임에 저장한다;
+group Outer
+repeat:LIST = wrr_rq.weight_arr[WEIGHT];
+    group Inner
+    repeat:get TASK from LIST;
+        if (TASK is idle and\nTASK can be run on MAX_CPU?) then (yes)
+            #B6CEC7:return task;
+            stop
+        endif
+    backward:next TASK;
+    repeat while (TASK available?) is (yes) not (no)
+    end group
+backward:WEIGHT =\nWEIGHT - 1;
+repeat while (WEIGHT > 0 ?) is (yes) not (no)
+end group
+:return "Migration Unable";
+stop
+@enduml
