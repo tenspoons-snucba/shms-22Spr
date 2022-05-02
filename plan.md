@@ -98,7 +98,11 @@ from gtts import gTTS  # gTTS 모듈 임포트
 from IPython.display import Audio  # Audio 모듈 임포트. colab에서 오디오 재생을 위해 필요
 
 # fString으로 할 수 있지만, 문자열 연산을 연습하기 위해 "+"를 사용했어요.
-message = "오늘의 코로나19 확진자 수는 " + today_covid_info[3] + "명이고, 사망자 수는 " + today_covid_info[0] + "명 입니다."
+message = "오늘의 코로나19 확진자 수는 " \
+    + today_covid_info[3] \
+    + "명이고, 사망자 수는 " \
+    + today_covid_info[0] \
+    + "명 입니다."
 
 tts = gTTS(message, lang='ko')
 tts.save('hello_ko.wav')
