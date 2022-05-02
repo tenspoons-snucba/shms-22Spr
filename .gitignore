@@ -131,3 +131,6 @@ dmypy.json
 # Ignore data file unless specified
 *.pickle
 *.xlsx
+
+# Ignore Compiled Documents
+*.pdf
