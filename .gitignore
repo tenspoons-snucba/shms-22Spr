@@ -135,3 +135,6 @@ dmypy.json
 # Ignore Compiled Documents
 *.pdf
 *.wav
+
+# Ignore font files
+*.ttf
